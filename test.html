@@ -1,0 +1,80 @@
+<html>
+<head>
+
+    <style type="text/css">
+       h1 {
+            font-size:200%; /* 字の大きさ200% */
+            color:red; /* 字の色 あか*/
+       }
+
+       h2 {
+            color: blue; /* 字の色 青*/
+            font-size: 120%; /* 文字の大きさを120% */
+            border-left: 0.6em solid blue; /* 左端の縁の幅と色 */
+            background: #d8e0e0; /* 背景の色 */
+       }
+
+    </style>
+</head>
+<body>
+<h1>題目　文書構造と表示スタイルの分離</h1>
+<h2 id="top">１章　本文は文書の構造だけを記述 </h2>
+
+<p>
+bodyタグの中身は文書の構造のみを記述し見栄えに関する記述は避ける。
+見栄えはスタイルシートで宣言する。このように分離すると本文は長い期間にわたって使いながら、
+状況に応じて見栄えだけを変えていくことが可能になる。
+</p>
+
+<p> 画像とリンクの挿入
+<img src="http://www.ics.kagoshima-u.ac.jp/edu/katuyoukiso/html/img/flower.gif">  
+<a href="http://www.ics.kagoshima-u.ac.jp/edu/katuyoukiso/html/img.html">色々な画像 </a>   
+</p>
+<h2>２章　書式付きやプログラムなど </h2>
+<pre>書式付なので改行やスペースがそのまま生きる
+　あいうえお
+　かきくけこ
+　さしすせそ
+</pre>
+
+<pre class="program c">/*書式付だがクラスを指定、Cプログラムなのでフォントもそれなりにしたい*/
+#include&lt;stdio.h&gt;
+void printMark(int n)/*データは変数nとして渡される。この変数を仮引数と言う*/
+{
+    while(0&lt;n){
+        printf("*");
+        n--;/*ここで仮引き数nを変更しているが、実引数は変化しない*/
+    }
+    printf("\n");
+}
+int main(void)/*mainも関数であり、プログラムの実行はmain関数の呼び出しである。*/
+{
+    int i,max=10;
+    for(i=1;i&lt;=max;i++)
+        printMark(i);/*実引数ｉの値を仮引数nに代入し、printMark関数を呼び出す*/
+    return 0;
+}
+/*
+実行結果
+*
+**
+***
+****
+*****
+******
+*******
+********
+*********
+**********
+
+*/
+</pre>
+
+<h2>３章　スタイルシートで見栄えは変えられる </h2>
+
+<p>
+今回はCSSを紹介しました。Webページに関してはフォームやJavaScriptによるプログラムなど沢山話題があります。これからも進化してゆくので気にかけて置いてください。
+</p>
+
+</body>
+</html>
